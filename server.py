@@ -48,17 +48,3 @@ def return_sentiment(keyword):
 
 #################
 app.run(port=5500)
-
-'''
-
-def get_sentiment(search_string):
-    public_tweets=api.search(search_string)
-    count=0
-    sentiment=0
-    subjectivity=0
-    for tweet in public_tweets:
-        analysis=TextBlob(tweet.text)
-        sentiment+=analysis.sentiment[0]
-        subjectivity+=analysis.sentiment[1]
-    return {'sentiment':sentiment,'subjectivity':subjectivity}
-'''
