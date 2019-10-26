@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Boy of Silence</title>
+    <link rel="stylesheet" href="/static/index.css"/>
+</head>
+<body>
+    <div class="banner">
+        <img src="https://fontmeme.com/permalink/191026/e1899663766817eb3a9e5e29d9ab1421.png" alt="gwent-font" border="0">
+        <h5>Twitter Sentiment Analysis Project by Hamza Ali</h5>
+    </div>
+    <div class="main-content">
+        <h1 class="sentiment-output">Sentiment:<h1>
+        <input class="keyword" placeholder="enter keyword">
+        <button class="alert-button">Get Sentiment</button>
+        <script>
+            const button=document.querySelector('.alert-button')
+            button.addEventListener('click',function(){
+                const keyword=document.querySelector('.keyword')
+                const value=keyword.value
+                fetch(`/sentiment${value}`)
+                .then(function(response){
+                    return response.json()
+                })
+                .then(function(processedResponse){
+                    const sentimentOutput=document.querySelector('.sentiment-output')
+                    sentimentOutput.innerText=`Sentiment:${processedResponse.sentiment}`
+                })
+            })
+        </script>
+    </div>
+</body>
+</html>

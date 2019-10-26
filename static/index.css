@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(47, 47, 47);
+    color: white;
+}
+.main-content{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}   
+.banner{
+    justify-content: center;
+    align-items:center;
+    display:flex;
+    flex-direction:column;
+}
