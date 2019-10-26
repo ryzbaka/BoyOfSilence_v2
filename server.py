@@ -42,7 +42,7 @@ def return_sentiment(keyword):
         analysis=TextBlob(tweet.text)
         sentiment+=analysis.sentiment[0]
         subjectivity+=analysis.sentiment[1]
-    object={'sentiment':round(sentiment,2),'status':'okay'}
+    object={'sentiment':round(sentiment/len(public_tweets),2),'status':'okay'}
     json_object=json.dumps(object)
     return json_object
 
